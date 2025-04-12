@@ -1,0 +1,49 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+
+# VSCode settings
+.vscode/
+
+# Jest coverage
+coverage/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Mac system files
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE files
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Misc
+*.log
+
+# Ignore sample temp files
+samples/.DS_Store
+
+# Ignore package lock if not used
+# package-lock.json
