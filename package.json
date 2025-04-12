@@ -1,5 +1,5 @@
 {
-  "name": "iso20022-camt053-parser",
+  "name": "iso20022-camt-053-parser",
   "version": "0.1.0",
   "description": "Robust ISO20022 CAMT.053 parser with XSD validation and JSON output",
   "main": "dist/index.js",
@@ -19,6 +19,21 @@
   ],
   "author": "Darko Mijic <darko.mijic@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darko-mijic/iso-20022-camt-053-parser"
+  },
+  "files": [
+    "dist",
+    "schemas",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
   "dependencies": {
     "libxmljs2": "^0.35.0",
     "xml2js": "^0.6.2"
