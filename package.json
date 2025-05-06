@@ -1,12 +1,13 @@
 {
   "name": "iso20022-camt-053-parser",
-  "version": "0.1.0",
+  "version": "2.1.0",
   "description": "Robust ISO20022 CAMT.053 parser with XSD validation and JSON output",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "samples": "npm run build && node dist/parse-samples.js"
   },
   "keywords": [
     "iso20022",

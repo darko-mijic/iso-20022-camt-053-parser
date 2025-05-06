@@ -17,6 +17,7 @@ export interface Camt053Statement {
   accountIBAN: string | null;
   currency: string;
   statementDate: string; // ISO 8601 Date format (YYYY-MM-DD)
+  sequenceNumber: number | null; // Legal sequence number of the statement
   openingBalance: number | null;
   closingBalance: number | null;
   numberOfCredits: number | null;

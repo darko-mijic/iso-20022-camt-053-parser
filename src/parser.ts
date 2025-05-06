@@ -138,6 +138,9 @@ export async function parseCamt053(xml: string): Promise<Camt053Statement[]> {
     } else {
       currency = '';
     }
+    // Sequence Number (LglSeqNb or ElctrncSeqNb)
+    const sequenceNumberRaw = get(stmt, ['LglSeqNb']) ?? get(stmt, ['ElctrncSeqNb']);
+    const sequenceNumber = sequenceNumberRaw ? parseInt(sequenceNumberRaw, 10) : null;
     // Statement date
     let statementDate: string =
       extractDate(get(stmt, ['FrToDt', 'ToDtTm'])) // ISO standard: ToDtTm
@@ -347,6 +350,7 @@ export async function parseCamt053(xml: string): Promise<Camt053Statement[]> {
       accountIBAN,
       currency,
       statementDate,
+      sequenceNumber,
       openingBalance,
       closingBalance,
       numberOfCredits,

@@ -10,6 +10,7 @@ A robust Node.js/TypeScript parser for ISO 20022 CAMT.053 bank statement XML fil
 - **Batch and multi-transaction support**: Correctly extracts all transactions, even when multiple `<TxDtls>` are present or missing.
 - **Graceful fallbacks**: Provides sensible fallbacks for missing fields (e.g., uses Ntry-level info if TxDtls is missing).
 - **Comprehensive output**: Extracts account, balance, transaction, counterparty, remittance, and description fields.
+- **Statement sequence numbers**: Extracts both legal (`LglSeqNb`) and electronic (`ElctrncSeqNb`) sequence numbers for tracking statement chronology.
 - **Sample files and schemas included**: Test with real-world samples and official XSDs.
 
 ## Getting Started
@@ -62,6 +63,12 @@ A robust Node.js/TypeScript parser for ISO 20022 CAMT.053 bank statement XML fil
 Parse all XML files in the `samples/` directory and print the parsed output:
 
 ```sh
+npm run samples
+```
+
+Or build and run manually:
+
+```sh
 npm run build
 node dist/parse-samples.js
 ```
@@ -89,6 +96,7 @@ The parser returns an array of statements, each with:
 - `accountIBAN`
 - `currency`
 - `statementDate`
+- `sequenceNumber` — the sequence number of the statement, which can come from either `LglSeqNb` or `ElctrncSeqNb`
 - `openingBalance`
 - `closingBalance`
 - `numberOfCredits`
