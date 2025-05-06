@@ -1,5 +1,5 @@
 {
-  "name": "iso20022-camt-053-parser",
+  "name": "camt-parser",
   "version": "2.1.0",
   "description": "Robust ISO20022 CAMT.053 parser with XSD validation and JSON output",
   "main": "dist/index.js",
